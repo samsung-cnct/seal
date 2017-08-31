@@ -58,11 +58,11 @@ class MessageBuilder
 
   def list_pull_requests
     message = @content.keys.each_with_index.map { |title, n| present(title, n + 1) }
-    "Hello team! \n\n Here are the pull requests that need to be reviewed today:\n\n#{message.join}\nMerry reviewing!"
+    "Hello team! \n\n Here are the pull requests that need to be reviewed today in #{ENV['SEAL_ORGANISATION']}:\n\n#{message.join}\nMerry reviewing!"
   end
 
   def no_pull_requests
-    "Aloha team! It's a beautiful day! :happyseal: :happyseal: :happyseal:\n\nNo pull requests to review today! :rainbow: :sunny: :metal: :tada:"
+    "Aloha team! It's a beautiful day! :happyseal: :happyseal: :happyseal:\n\nNo pull requests to review today in #{ENV['SEAL_ORGANISATION']}! :rainbow: :sunny: :metal: :tada:"
   end
 
   def bark_about_quotes

@@ -36,6 +36,7 @@ class GithubFetcher
     pr['title'] = pull_request.title
     pr['link'] = pull_request.html_url
     pr['author'] = pull_request.user.login
+    pr['assignee'] = pull_request.assignee.login
     pr['repo'] = repo_name
     pr['comments_count'] = count_comments(pull_request, repo_name)
     pr['thumbs_up'] = count_thumbs_up(pull_request, repo_name)
