@@ -36,9 +36,6 @@ class GithubFetcher
     pr['title'] = pull_request.title
     pr['link'] = pull_request.html_url
     pr['author'] = pull_request.user.login
-    if pull_request.requested_reviewers
-      pr['reviewers'] = pull_request.requested_reviewers.map { |r| r[:login] }.join(', ')
-    end
     pr['repo'] = repo_name
     pr['comments_count'] = count_comments(pull_request, repo_name)
     pr['thumbs_up'] = count_thumbs_up(pull_request, repo_name)
